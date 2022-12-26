@@ -4,9 +4,10 @@ import Card from "../../components/card/Card";
 import useFetchRequest from "../../hooks/useFetchRequest";
 
 const CharacterContainer = ({
-  charNumber,
+  charToChoose,
   setCharacterOne,
   setCharacterTwo,
+  setIsOpenCharacterModal,
 }) => {
   const [isLoading, characters, setCharacters] = useFetchRequest("?page=1");
 
@@ -28,7 +29,7 @@ const CharacterContainer = ({
 
   return (
     <StyleCardContainer>
-      <h1>Elegir personaje {charNumber}</h1>
+      <h1>Elegir personaje {charToChoose}</h1>
       <div>
         {isLoading
           ? "Cargando..."
@@ -39,7 +40,8 @@ const CharacterContainer = ({
                   char={char}
                   setCharacterOne={setCharacterOne}
                   setCharacterTwo={setCharacterTwo}
-                  charNumber={charNumber}
+                  charToChoose={charToChoose}
+                  setIsOpenCharacterModal={setIsOpenCharacterModal}
                 />
               );
             })}
@@ -55,7 +57,14 @@ const CharacterContainer = ({
 export default CharacterContainer;
 
 const StyleCardContainer = styled.div`
+  width: 100%;
+  padding: 1rem;
   text-align: center;
+  border-radius: 10px;
+
+  background: #bdc3c7;
+  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
+  background: linear-gradient(to right, #2c3e50c3, #bdc3c7);
 
   & > div:first-of-type {
     padding: 1rem;

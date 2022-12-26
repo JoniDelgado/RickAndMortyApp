@@ -1,20 +1,24 @@
 import React from "react";
 import reactDOM from "react-dom";
 import styled from "styled-components";
-import CharacterContainer from "../components/characterContainer/CharacterContainer";
 
 const modalPath = document.getElementById("characterModal");
 
-const CharacterModal = () => {
+const CharacterModal = ({ children }) => {
   return reactDOM.createPortal(
-    <StyleModalContainer>
-      <div>Modal par ver personajes</div>
-      {/* <CharacterContainer /> */}
-    </StyleModalContainer>,
+    <StyleModalContainer>{children}</StyleModalContainer>,
     modalPath
   );
 };
 
 export default CharacterModal;
 
-const StyleModalContainer = styled.div``;
+const StyleModalContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  background-color: #00000083;
+`;

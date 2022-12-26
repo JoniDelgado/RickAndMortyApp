@@ -1,15 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
-const Card = ({ char, setCharacterOne, setCharacterTwo, charNumber }) => {
+const Card = ({
+  char,
+  setCharacterOne,
+  setCharacterTwo,
+  charToChoose,
+  setIsOpenCharacterModal,
+}) => {
   const { name, image } = char;
 
-  const handleClick = (char, charNumber) => {
-    charNumber === 1 ? setCharacterOne(char) : setCharacterTwo(char);
+  const handleClick = (char, charToChoose) => {
+    charToChoose === 1 ? setCharacterOne(char) : setCharacterTwo(char);
+    setIsOpenCharacterModal(false);
   };
 
   return (
-    <StyleCard onClick={() => handleClick(char, charNumber)}>
+    <StyleCard onClick={() => handleClick(char, charToChoose)}>
       <img src={image} alt={name} />
     </StyleCard>
   );
