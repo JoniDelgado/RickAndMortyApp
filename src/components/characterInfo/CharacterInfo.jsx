@@ -112,7 +112,7 @@ const StyleCharacterInfoContainer = styled.div`
     margin: 1rem 0;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
     align-items: center;
 
     h4 {
@@ -141,7 +141,7 @@ const StyleCharacterInfoContainer = styled.div`
     }
 
     @media screen and (max-width: 400px) {
-      left: 25%;
+      left: 28%;
     }
   }
 

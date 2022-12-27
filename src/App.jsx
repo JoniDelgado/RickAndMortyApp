@@ -14,5 +14,4 @@ export default App;
 const StyleAppContainer = styled.main`
   margin: auto;
   max-width: 1200px;
-  border: thin solid red;
 `;

@@ -29,9 +29,14 @@ const StyleCard = styled.div`
   height: 100px;
   transition: all linear 0.3s;
 
+  @media screen and (max-width: 700px) {
+    width: 55px;
+    height: 55px;
+  }
+
   img {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 1px 5px 15px black;

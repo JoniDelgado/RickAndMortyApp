@@ -1,35 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
-const EpisodesCard = ({ characterEpisode, character, orientation }) => {
+const EpisodesCard = ({ characterEpisode, charNumber }) => {
   return (
     <>
-      <StyleCardWrapper orientation={orientation}>
+      <StyleCardWrapper>
         <div>
-          <h2>Datos de personaje</h2>
-          {character && (
-            <StyledCharData>
-              <p>
-                <strong>Nombre: </strong>
-                {character.name}
-              </p>
-              <p>
-                <strong>Estado: </strong>
-                {character.status}
-              </p>
-              <p>
-                <strong>Planeta: </strong>
-                {character.location.name}
-              </p>
-            </StyledCharData>
-          )}
+          <h3>Episodios del personaje {charNumber}: </h3>
         </div>
-        <StyledCharData>
-          <h3>Episodios del personaje: </h3>
+        <div>
           {characterEpisode.map((el) => {
             return <p key={el.id}>{el.name}</p>;
           })}
-        </StyledCharData>
+        </div>
       </StyleCardWrapper>
     </>
   );
@@ -38,19 +21,19 @@ const EpisodesCard = ({ characterEpisode, character, orientation }) => {
 export default EpisodesCard;
 
 const StyleCardWrapper = styled.div`
-  padding: 1rem;
-  text-align: ${({ orientation }) => (!orientation ? "start" : "end")};
+  margin: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
 
-  h2 {
-    padding: 0.5rem 1rem;
-    border-bottom: thin solid gray;
-    border-radius: ${({ orientation }) =>
-      !orientation ? "0 20px 0 0" : "20px 0 0 0"};
-    background-color: #dddddd;
+  div:first-of-type {
+    padding: 1rem 0;
+    border-radius: 15px;
+    text-transform: uppercase;
+    color: white;
+    background: #f85032;
+    background: -webkit-linear-gradient(to right, #e73827, #f85032);
+    background: linear-gradient(to right, #e73827, #f85032);
   }
-`;
-
-const StyledCharData = styled.div`
-  padding: 1rem;
-  border-bottom: thin solid gray;
 `;

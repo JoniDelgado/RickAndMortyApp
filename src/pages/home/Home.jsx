@@ -3,6 +3,7 @@ import styled from "styled-components";
 import CharacterContainer from "../../components/characterContainer/CharacterContainer";
 import CharacterInfo from "../../components/characterInfo/CharacterInfo";
 import EpisodesCard from "../../components/episodesCard/EpisodesCard";
+import Header from "../../components/header/Header";
 import { getEpisodes } from "../../config/getEpisodesData";
 import MatchedEpisodes from "../../matchedEpisodes/MatchedEpisodes";
 import CharacterModal from "../../modals/CharacterModal";
@@ -44,6 +45,7 @@ const Home = () => {
 
   return (
     <>
+      <Header />
       <StyleCharInfoContainer>
         <CharacterInfo
           setIsOpenCharacterModal={setIsOpenCharacterModal}
@@ -59,18 +61,19 @@ const Home = () => {
         />
       </StyleCharInfoContainer>
 
-      {/* <StyleChapterContainer>
+      <StyleChapterContainer>
         <EpisodesCard
           character={characterOne}
           characterEpisode={charOneEpisodes}
+          charNumber={1}
         />
         <MatchedEpisodes matchedEpisodesList={matchedEpisodesList} />
         <EpisodesCard
           character={characterTwo}
           characterEpisode={charTwoEpisodes}
-          orientation="reverse"
+          charNumber={2}
         />
-      </StyleChapterContainer> */}
+      </StyleChapterContainer>
 
       {isOpenCharacterModal && (
         <CharacterModal
@@ -96,6 +99,7 @@ const StyleCharInfoContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   place-items: center;
+  background-color: white;
 
   @media screen and (max-width: 700px) {
     display: flex;
@@ -106,5 +110,6 @@ const StyleCharInfoContainer = styled.div`
 const StyleChapterContainer = styled.div`
   max-width: 100%;
   display: grid;
+  gap: 1rem;
   grid-template-columns: repeat(3, 1fr);
 `;

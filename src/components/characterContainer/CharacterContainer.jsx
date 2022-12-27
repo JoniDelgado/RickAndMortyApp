@@ -29,7 +29,7 @@ const CharacterContainer = ({
 
   return (
     <StyleCardContainer>
-      <h1>Elegir personaje {charToChoose}</h1>
+      <h1>ELIGE PERSONAJE {charToChoose}</h1>
       <div>
         {isLoading
           ? "Cargando..."
@@ -57,7 +57,8 @@ const CharacterContainer = ({
 export default CharacterContainer;
 
 const StyleCardContainer = styled.div`
-  border: thin solid red;
+  max-width: 100%;
+  max-height: 90vh;
   padding: 1rem;
   text-align: center;
   border-radius: 10px;
@@ -65,6 +66,12 @@ const StyleCardContainer = styled.div`
   background: #bdc3c7;
   background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
   background: linear-gradient(to right, #2c3e50c3, #bdc3c7);
+
+  @media screen and (max-width: 700px) {
+    h1 {
+      font-size: 1.3rem;
+    }
+  }
 
   & > div:first-of-type {
     padding: 1rem;
