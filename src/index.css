@@ -7,9 +7,8 @@
 body {
   width: 100vw;
   height: 120vh;
-  background-image: url("images/bgapp.jpg");
+  background-image: url("images/bgapp.png");
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
 }
 
