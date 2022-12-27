@@ -38,10 +38,6 @@ const StyleMatchesCardWrapper = styled.div`
   border-radius: 15px;
   overflow-y: scroll;
 
-  ::-webkit-scrollbar {
-    display: none;
-  }
-
   div:first-of-type {
     padding: 1rem;
     border-radius: 15px;
@@ -54,5 +50,17 @@ const StyleMatchesCardWrapper = styled.div`
 
   div:last-of-type {
     padding: 1rem;
+  }
+
+  button {
+    padding: 1rem;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1rem;
+
+    background: #f85032;
+    background: -webkit-linear-gradient(to right, #e73827, #f85032);
+    background: linear-gradient(to right, #e73827, #f85032);
   }
 `;

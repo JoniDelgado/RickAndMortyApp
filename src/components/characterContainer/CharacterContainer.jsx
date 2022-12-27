@@ -62,10 +62,9 @@ const StyleCardContainer = styled.div`
   padding: 1rem;
   text-align: center;
   border-radius: 10px;
-
-  background: #bdc3c7;
-  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
-  background: linear-gradient(to right, #2c3e50c3, #bdc3c7);
+  background: url("images/bgimage.jpg");
+  color: #f5f5f5;
+  text-shadow: 3px 10px 20px black;
 
   @media screen and (max-width: 700px) {
     h1 {
@@ -78,6 +77,10 @@ const StyleCardContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
+
+    @media screen and (max-width: 700px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 `;
 

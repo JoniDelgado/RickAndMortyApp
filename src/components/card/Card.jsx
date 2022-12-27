@@ -30,8 +30,18 @@ const StyleCard = styled.div`
   transition: all linear 0.3s;
 
   @media screen and (max-width: 700px) {
-    width: 55px;
-    height: 55px;
+    width: 100px;
+    height: 100px;
+  }
+
+  @media screen and (max-width: 540px) {
+    width: 70px;
+    height: 70px;
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 50px;
+    height: 50px;
   }
 
   img {

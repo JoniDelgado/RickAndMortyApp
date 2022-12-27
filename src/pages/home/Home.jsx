@@ -49,12 +49,6 @@ const Home = () => {
     <>
       <Header />
 
-      <EpisodeButtons
-        matchedEpisodesList={matchedEpisodesList}
-        charOneEpisodes={charOneEpisodes}
-        charTwoEpisodes={charTwoEpisodes}
-      />
-
       <StyleCharInfoContainer>
         <CharacterInfo
           setIsOpenCharacterModal={setIsOpenCharacterModal}
@@ -69,6 +63,12 @@ const Home = () => {
           characterToShow={characterTwo}
         />
       </StyleCharInfoContainer>
+
+      <EpisodeButtons
+        matchedEpisodesList={matchedEpisodesList}
+        charOneEpisodes={charOneEpisodes}
+        charTwoEpisodes={charTwoEpisodes}
+      />
 
       {isOpenCharacterModal && (
         <CharacterModal
@@ -94,7 +94,7 @@ const StyleCharInfoContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   place-items: center;
-  background-color: white;
+  /* background-color: white; */
 
   @media screen and (max-width: 700px) {
     display: flex;

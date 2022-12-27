@@ -61,6 +61,7 @@ const EpisodeButtons = ({
 export default EpisodeButtons;
 
 const StyleButtonsContainer = styled.div`
+  margin: 2rem 0;
   display: flex;
   justify-content: space-around;
 

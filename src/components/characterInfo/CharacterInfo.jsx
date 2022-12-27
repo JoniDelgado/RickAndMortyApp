@@ -84,8 +84,9 @@ const StyleCharacterInfoContainer = styled.div`
   width: 90%;
   max-width: 400px;
   text-align: center;
-  border-radius: 0 0 10px 10px;
+  border-radius: 15px;
   position: relative;
+  background-color: white;
 
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 
