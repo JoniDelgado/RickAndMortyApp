@@ -7,9 +7,7 @@
 body {
   width: 100vw;
   height: 120vh;
-  background-image: url("images/bgapp.png");
-  background-size: cover;
-  background-position: center;
+  background: url("images/bgapp.png") center;
 }
 
 @media screen and (min-width: 700px) {
