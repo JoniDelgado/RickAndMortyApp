@@ -13,6 +13,6 @@ export default App;
 
 const StyleAppContainer = styled.main`
   margin: auto;
-  width: 100vw;
   max-width: 1200px;
+  border: thin solid red;
 `;

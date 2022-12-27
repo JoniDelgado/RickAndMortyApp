@@ -59,7 +59,7 @@ const Home = () => {
         />
       </StyleCharInfoContainer>
 
-      <StyleChapterContainer>
+      {/* <StyleChapterContainer>
         <EpisodesCard
           character={characterOne}
           characterEpisode={charOneEpisodes}
@@ -70,7 +70,7 @@ const Home = () => {
           characterEpisode={charTwoEpisodes}
           orientation="reverse"
         />
-      </StyleChapterContainer>
+      </StyleChapterContainer> */}
 
       {isOpenCharacterModal && (
         <CharacterModal
@@ -96,9 +96,15 @@ const StyleCharInfoContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   place-items: center;
+
+  @media screen and (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const StyleChapterContainer = styled.div`
+  max-width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 `;

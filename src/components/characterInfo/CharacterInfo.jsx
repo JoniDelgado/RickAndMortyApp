@@ -19,7 +19,7 @@ const CharacterInfo = ({
           <div className="backgroundContainer">
             <img src="./images/background.jpg" alt="" />
           </div>
-          <div className="image">
+          <div className="profil-image">
             <img
               src="https://elcomercio.pe/resizer/1Jof6GG7D5ikDvmymCn10G7TGZI=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/KRKOINCP7JGR7KWT4HNBDSJPDA.jpg"
               alt=""
@@ -50,7 +50,7 @@ const CharacterInfo = ({
           <div className="backgroundContainer">
             <img src="./images/background.jpg" alt="Rick and morty image" />
           </div>
-          <div className="image">
+          <div className="profil-image">
             <img src={characterToShow.image} alt={characterToShow.name} />
           </div>
           <h3>{characterToShow.name}</h3>
@@ -90,6 +90,10 @@ const StyleCharacterInfoContainer = styled.div`
 
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 
+  @media screen and (max-width: 700px) {
+    padding-bottom: 1rem;
+  }
+
   .backgroundContainer {
     border-radius: 15px;
     overflow: hidden;
@@ -98,6 +102,10 @@ const StyleCharacterInfoContainer = styled.div`
   h3 {
     margin-top: 4rem;
     text-transform: uppercase;
+
+    @media screen and (max-width: 700px) {
+      margin-top: 2rem;
+    }
   }
 
   .data-container {
@@ -116,7 +124,7 @@ const StyleCharacterInfoContainer = styled.div`
     }
   }
 
-  .image {
+  .profil-image {
     width: 130px;
     height: 130px;
     border: 5px solid white;
@@ -130,6 +138,10 @@ const StyleCharacterInfoContainer = styled.div`
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    @media screen and (max-width: 400px) {
+      left: 25%;
     }
   }
 
@@ -149,6 +161,12 @@ const StyleCharacterInfoContainer = styled.div`
     p {
       font-size: 0.8rem;
     }
+
+    @media screen and (max-width: 700px) {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
   }
 
   button {
@@ -164,6 +182,12 @@ const StyleCharacterInfoContainer = styled.div`
     background: #f85032;
     background: -webkit-linear-gradient(to right, #e73827, #f85032);
     background: linear-gradient(to right, #e73827, #f85032);
+
+    @media screen and (max-width: 700px) {
+      position: absolute;
+      top: 30px;
+      right: 10px;
+    }
   }
 
   img {

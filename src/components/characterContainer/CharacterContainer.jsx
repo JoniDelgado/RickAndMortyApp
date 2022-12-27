@@ -57,7 +57,7 @@ const CharacterContainer = ({
 export default CharacterContainer;
 
 const StyleCardContainer = styled.div`
-  width: 100%;
+  border: thin solid red;
   padding: 1rem;
   text-align: center;
   border-radius: 10px;
