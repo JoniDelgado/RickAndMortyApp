@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import CharacterContainer from "../../components/characterContainer/CharacterContainer";
 import CharacterInfo from "../../components/characterInfo/CharacterInfo";
+import EpisodeButtons from "../../components/episodesButtons/EpisodeButtons";
 import EpisodesCard from "../../components/episodesCard/EpisodesCard";
 import Header from "../../components/header/Header";
 import { getEpisodes } from "../../config/getEpisodesData";
@@ -9,17 +10,18 @@ import MatchedEpisodes from "../../matchedEpisodes/MatchedEpisodes";
 import CharacterModal from "../../modals/CharacterModal";
 
 const Home = () => {
-  const [characterOne, setCharacterOne] = useState(null);
-  const [characterTwo, setCharacterTwo] = useState(null);
-
   // SELECCIÓN DE EPISODIOS
   const [charOneEpisodes, setCharOneEpisodes] = useState([]);
   const [charTwoEpisodes, setCharTwoEpisodes] = useState([]);
   const [matchedEpisodesList, setMatchedEpisodesList] = useState([]);
 
   // SELECCIÓN DE PERSONAJES
-  const [isOpenCharacterModal, setIsOpenCharacterModal] = useState(false);
+  const [characterOne, setCharacterOne] = useState(null);
+  const [characterTwo, setCharacterTwo] = useState(null);
   const [charToChoose, setCharToChoose] = useState(null);
+
+  //MANEJADOR DE MODAL
+  const [isOpenCharacterModal, setIsOpenCharacterModal] = useState(false);
 
   useEffect(() => {
     if (!characterOne) return;
@@ -46,6 +48,13 @@ const Home = () => {
   return (
     <>
       <Header />
+
+      <EpisodeButtons
+        matchedEpisodesList={matchedEpisodesList}
+        charOneEpisodes={charOneEpisodes}
+        charTwoEpisodes={charTwoEpisodes}
+      />
+
       <StyleCharInfoContainer>
         <CharacterInfo
           setIsOpenCharacterModal={setIsOpenCharacterModal}
@@ -60,20 +69,6 @@ const Home = () => {
           characterToShow={characterTwo}
         />
       </StyleCharInfoContainer>
-
-      <StyleChapterContainer>
-        <EpisodesCard
-          character={characterOne}
-          characterEpisode={charOneEpisodes}
-          charNumber={1}
-        />
-        <MatchedEpisodes matchedEpisodesList={matchedEpisodesList} />
-        <EpisodesCard
-          character={characterTwo}
-          characterEpisode={charTwoEpisodes}
-          charNumber={2}
-        />
-      </StyleChapterContainer>
 
       {isOpenCharacterModal && (
         <CharacterModal
@@ -106,11 +101,4 @@ const StyleCharInfoContainer = styled.div`
     flex-direction: column;
     gap: 1.5rem;
   }
-`;
-
-const StyleChapterContainer = styled.div`
-  max-width: 100%;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(3, 1fr);
 `;

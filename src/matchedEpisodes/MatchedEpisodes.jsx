@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const MatchedEpisodes = ({ matchedEpisodesList }) => {
+const MatchedEpisodes = ({ matchedEpisodesList, setIsOpenEpisodeModal }) => {
   return (
     <>
       <StyleMatchesCardWrapper>
@@ -14,12 +14,12 @@ const MatchedEpisodes = ({ matchedEpisodesList }) => {
           </div>
         ) : (
           <div>
-            <h4>Episodios juntos: </h4>
             {matchedEpisodesList.map((epi, ind) => {
               return <p key={ind}>{epi.name}</p>;
             })}
           </div>
         )}
+        <button onClick={() => setIsOpenEpisodeModal(false)}>Cerrar</button>
       </StyleMatchesCardWrapper>
     </>
   );
@@ -29,18 +29,30 @@ export default MatchedEpisodes;
 
 const StyleMatchesCardWrapper = styled.div`
   margin-top: 4rem;
+  max-height: 80vh;
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  background-color: white;
+  border-radius: 15px;
+  overflow-y: scroll;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 
   div:first-of-type {
-    padding: 1rem 0;
+    padding: 1rem;
     border-radius: 15px;
     text-transform: uppercase;
     color: white;
     background: #f85032;
     background: -webkit-linear-gradient(to right, #e73827, #f85032);
     background: linear-gradient(to right, #e73827, #f85032);
+  }
+
+  div:last-of-type {
+    padding: 1rem;
   }
 `;

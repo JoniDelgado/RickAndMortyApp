@@ -12,7 +12,7 @@ const Header = () => {
 export default Header;
 
 const StyleHeaderContainer = styled.div`
-  padding: 0.5rem 0;
+  padding: 1rem 0;
   width: 100%;
   display: flex;
   justify-content: space-around;
