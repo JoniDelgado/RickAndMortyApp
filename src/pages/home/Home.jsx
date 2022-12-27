@@ -104,6 +104,7 @@ const StyleCharInfoContainer = styled.div`
   @media screen and (max-width: 700px) {
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
   }
 `;
 

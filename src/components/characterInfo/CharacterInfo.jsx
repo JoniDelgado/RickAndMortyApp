@@ -81,7 +81,6 @@ export default CharacterInfo;
 
 const StyleCharacterInfoContainer = styled.div`
   padding-bottom: 3rem;
-  margin-top: 3rem;
   width: 90%;
   max-width: 400px;
   text-align: center;
